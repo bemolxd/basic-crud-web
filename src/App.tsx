@@ -1,38 +1,23 @@
-import * as React from "react"
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+import React, { Suspense } from "react";
+import { Route, Switch } from "react-router-dom";
+import { ChakraProvider, theme } from "@chakra-ui/react";
+import { ReactQueryDevtools } from "react-query/devtools";
+
+import { MainRoutes } from "containers/MainRoutes";
+import { LoginPage } from "containers/LoginPage";
+
+import { AuthRoutes } from "components/Auth";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
-    </Box>
+    <Switch>
+      <Suspense fallback={<div>loading...</div>}>
+        <AuthRoutes>
+          <Route component={MainRoutes} path="/" />
+        </AuthRoutes>
+        <Route path="/login" component={LoginPage} />
+      </Suspense>
+    </Switch>
+    <ReactQueryDevtools initialIsOpen={false} />
   </ChakraProvider>
-)
+);
