@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Input, VStack } from "@chakra-ui/react";
-import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
 
 import { LoginPayload } from "modules/login/application";
@@ -12,13 +11,11 @@ export const LoginForm = () => {
     handleSubmit,
     formState: { isSubmitting },
   } = useForm<LoginPayload>();
-  const { push } = useHistory();
 
-  const login = useLogin();
+  const [login] = useLogin();
 
   const onSubmit = handleSubmit(async (data) => {
-    const response = await login.mutateAsync(data);
-    if (response?.id) return push("/");
+    login(data);
   });
 
   return (

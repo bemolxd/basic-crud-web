@@ -1,3 +1,4 @@
+import { useHistory } from "react-router";
 import { useMutation, useQueryClient } from "react-query";
 import { AxiosError } from "axios";
 import { api } from "utils";
@@ -6,8 +7,9 @@ import { LoginPayload, LoginResponse } from "modules/login/application";
 
 export const useLogin = () => {
   const queryClient = useQueryClient();
+  const { push } = useHistory();
 
-  return useMutation(
+  const { mutateAsync } = useMutation(
     async (payload: LoginPayload) => {
       try {
         const { data } = await api.post<LoginResponse>("auth/login", payload);
@@ -19,7 +21,10 @@ export const useLogin = () => {
     {
       onSuccess: (response) => {
         queryClient.setQueryData(["auth/me"], response);
+        if (!!response) push("/");
       },
     }
   );
+
+  return [mutateAsync];
 };
