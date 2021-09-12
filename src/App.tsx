@@ -7,15 +7,18 @@ import { MainRoutes } from "containers/MainRoutes";
 import { LoginPage } from "containers/LoginPage";
 
 import { AuthRoutes } from "components/Auth";
+import { LayoutWrapper } from "components/Layout";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
     <Switch>
       <Suspense fallback={<div>loading...</div>}>
-        <AuthRoutes>
-          <Route component={MainRoutes} path="/" />
-        </AuthRoutes>
-        <Route path="/login" component={LoginPage} />
+        <LayoutWrapper>
+          <AuthRoutes>
+            <Route component={MainRoutes} path="/" />
+          </AuthRoutes>
+          <Route path="/login" component={LoginPage} />
+        </LayoutWrapper>
       </Suspense>
     </Switch>
     <ReactQueryDevtools initialIsOpen={false} />
