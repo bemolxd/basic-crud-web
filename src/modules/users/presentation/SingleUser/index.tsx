@@ -13,8 +13,6 @@ export const SingleUser = () => {
   const { data: user } = useUserQuery(Number(userId));
   const { data: posts } = usePostsQuery(Number(userId));
 
-  console.log(posts);
-
   if (!user) return <div>no user foud</div>;
 
   return (

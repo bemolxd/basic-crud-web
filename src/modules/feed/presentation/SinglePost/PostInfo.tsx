@@ -18,7 +18,7 @@ interface IProps {
 
 export const PostInfo = ({ userId, username, createdAt }: IProps) => (
   <HStack>
-    <Avatar size="md" mr={4} />
+    <Avatar size="md" mr={2} />
     <VStack align="flex-start">
       <Heading fontSize="md" fontWeight="500" as={Link} to={`/user/${userId}`}>
         {username}

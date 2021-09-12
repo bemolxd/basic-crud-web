@@ -1,16 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 
-import { useUsersQuery } from "modules/users/infrastructure";
+import { ExploreUsers } from "modules/users/presentation";
 
 export const UsersPage = () => {
-  const { data: users } = useUsersQuery();
-
-  console.log(users);
-
   return (
-    <>
-      <div>users page</div>
-      {users && users.map((user, idx) => <div key={idx}>{user.username}</div>)}
-    </>
+    <Suspense fallback={<div>loading users...</div>}>
+      <ExploreUsers />
+    </Suspense>
   );
 };
