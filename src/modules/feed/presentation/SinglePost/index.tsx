@@ -24,7 +24,11 @@ export const SinglePost = ({ post }: IProps) => {
     <Card>
       <VStack align="flex-start" spacing={4}>
         <HStack w="100%">
-          <PostInfo username={user?.username!} createdAt={post.created_at} />
+          <PostInfo
+            userId={user?.id!}
+            username={user?.username!}
+            createdAt={post.created_at}
+          />
           <Spacer />
           {isAllowed && <ActionButtons post={post} />}
         </HStack>
