@@ -8,11 +8,12 @@ import { LoginPage } from "containers/LoginPage";
 
 import { AuthRoutes } from "components/Auth";
 import { LayoutWrapper } from "components/Layout";
+import { PageLoading } from "components/Loading";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
     <Switch>
-      <Suspense fallback={<div>loading...</div>}>
+      <Suspense fallback={PageLoading}>
         <LayoutWrapper>
           <AuthRoutes>
             <Route component={MainRoutes} path="/" />
