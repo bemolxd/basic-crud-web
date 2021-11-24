@@ -8,7 +8,7 @@ export const LayoutWrapper = ({ children }: IChildrenProp) => {
   return (
     <>
       <Navbar />
-      <VStack mx={40} mt="58px">
+      <VStack mx={{ base: 40, xs: 2 }} mt="58px">
         {children}
       </VStack>
     </>

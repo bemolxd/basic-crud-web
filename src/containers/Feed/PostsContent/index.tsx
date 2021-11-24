@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Box } from "@chakra-ui/react";
 
 import { usePostsQuery } from "modules/feed/infrastructure";
@@ -8,7 +8,7 @@ import {
   SinglePost,
 } from "modules/feed/presentation";
 
-export const PostsContent = () => {
+export const PostsContent = memo(() => {
   const { data: posts } = usePostsQuery();
 
   if (!posts || posts.length === 0) return <div>no posts</div>;
@@ -22,4 +22,4 @@ export const PostsContent = () => {
       ))}
     </Box>
   );
-};
+});

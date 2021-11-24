@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 
 import { LoginPayload } from "modules/login/application";
 import { useLogin } from "modules/login/infrastructure";
+import { Link } from "react-router-dom";
 
 export const LoginForm = () => {
   const {
@@ -29,6 +30,9 @@ export const LoginForm = () => {
         />
         <Button mt={4} type="submit" isLoading={isSubmitting}>
           Login
+        </Button>
+        <Button as={Link} variant="ghost" to="/register">
+          Register
         </Button>
       </VStack>
     </form>

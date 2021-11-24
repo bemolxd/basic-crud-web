@@ -3,27 +3,23 @@ import { Box } from "@chakra-ui/react";
 import { useParams } from "react-router";
 
 import { useUserQuery } from "modules/users/infrastructure";
-import { EditPostModal, SinglePost } from "modules/feed/presentation";
-import { usePostsQuery } from "modules/feed/infrastructure";
+import { EditPostModal } from "modules/feed/presentation";
 
 import { InfoSection } from "./InfoSection";
+import { UserRoutes } from "./Content";
 
 export const SingleUser = () => {
   const { userId } = useParams<{ userId: string }>();
   const { data: user } = useUserQuery(Number(userId));
-  const { data: posts } = usePostsQuery(Number(userId));
 
-  if (!user) return <div>no user foud</div>;
+  if (!user) return <div>no user found</div>;
 
   return (
     <Box>
       <EditPostModal />
       <InfoSection user={user} />
-      {posts
-        ?.sort((prev, next) => next.id - prev.id)
-        .map((post) => (
-          <SinglePost key={post.id} post={post} />
-        ))}
+      {/* <Posts posts={posts!} /> */}
+      <UserRoutes />
     </Box>
   );
 };

@@ -5,6 +5,7 @@ export interface User {
   username: string;
   email: string;
   posts: Post[] | null;
-  creatred_at: string;
+  friendsIds: string[] | null;
+  created_at: string;
   updated_at: string;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, HStack, Spacer, VStack, Text } from "@chakra-ui/react";
+import { Box, HStack, Spacer, VStack, Text, Image } from "@chakra-ui/react";
 
 import { Card } from "components/Card";
 
@@ -35,6 +35,7 @@ export const SinglePost = ({ post }: IProps) => {
         <Box w="100%">
           <Text as="i">{post.title}</Text>
           <Text whiteSpace="pre-line">{post.body}</Text>
+          {post.images && <Image src={post.images[0]} maxH="400px" h="100%" />}
         </Box>
       </VStack>
     </Card>

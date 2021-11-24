@@ -12,12 +12,15 @@ import { dayjs } from "utils";
 import { Card } from "components/Card";
 
 import { User } from "modules/users/application";
+import { useHistory, Link } from "react-router-dom";
 
 interface IProps {
   user: User;
 }
 
 export const InfoSection = ({ user }: IProps) => {
+  const { push } = useHistory();
+
   return (
     <Card>
       <VStack spacing={4}>
@@ -26,12 +29,16 @@ export const InfoSection = ({ user }: IProps) => {
           {user.username}
         </Heading>
         <Text color="gray.500">
-          Dołączył(a): {dayjs(user.creatred_at).format("DD/MM/YYYY")}
+          Dołączył(a): {dayjs(user.created_at).format("DD/MM/YYYY")}
         </Text>
         <HStack maxW="200px" width="100%">
-          <Text>Posty: {user.posts!.length ?? 0}</Text>
+          <Text as={Link} to={`/user/${user.id}`}>
+            Posty: {user.posts?.length ?? 0}
+          </Text>
           <Spacer />
-          <Text>Znajomi: 0</Text>
+          <Text as={Link} to={`/user/${user.id}/friends`}>
+            Znajomi: {user.friendsIds?.length ?? 0}
+          </Text>
         </HStack>
       </VStack>
     </Card>
