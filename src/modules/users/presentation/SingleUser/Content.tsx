@@ -48,6 +48,7 @@ export const Friends = ({ userId }: { userId: string }) => {
     if (myUser?.friendsIds?.includes(user.id.toString())) {
       return user;
     }
+    return null;
   });
 
   return (

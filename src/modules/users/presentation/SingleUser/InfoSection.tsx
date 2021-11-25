@@ -12,15 +12,13 @@ import { dayjs } from "utils";
 import { Card } from "components/Card";
 
 import { User } from "modules/users/application";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface IProps {
   user: User;
 }
 
 export const InfoSection = ({ user }: IProps) => {
-  const { push } = useHistory();
-
   return (
     <Card>
       <VStack spacing={4}>
