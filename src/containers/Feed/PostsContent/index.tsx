@@ -1,4 +1,5 @@
-import React, { memo } from "react";
+import { memo } from "react";
+
 import { Box } from "@chakra-ui/react";
 
 import { usePostsQuery } from "modules/feed/infrastructure";

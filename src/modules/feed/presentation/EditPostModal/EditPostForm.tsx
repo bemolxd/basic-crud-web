@@ -1,5 +1,5 @@
-import React from "react";
 import { useFormContext } from "react-hook-form";
+
 import { Box, Input, Stack, Textarea } from "@chakra-ui/react";
 
 import { EditPostPayload } from "modules/feed/application";

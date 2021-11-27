@@ -1,6 +1,6 @@
-import React from "react";
-import { TabList, Tab, Tabs } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
+
+import { TabList, Tab, Tabs } from "@chakra-ui/react";
 
 import { Card } from "components/Card";
 

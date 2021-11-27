@@ -1,4 +1,5 @@
-import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   Avatar,
   Heading,
@@ -7,12 +8,12 @@ import {
   VStack,
   Text,
 } from "@chakra-ui/react";
+
 import { dayjs } from "utils";
 
 import { Card } from "components/Card";
 
 import { User } from "modules/users/application";
-import { Link } from "react-router-dom";
 
 interface IProps {
   user: User;

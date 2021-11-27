@@ -1,4 +1,5 @@
-import React from "react";
+import { useHistory } from "react-router";
+
 import {
   Avatar,
   Menu,
@@ -11,7 +12,6 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useHistory } from "react-router";
 
 import { useLogout, useMeQuery } from "modules/login/infrastructure";
 

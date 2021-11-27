@@ -1,4 +1,5 @@
-import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   Heading,
   HStack,
@@ -6,14 +7,13 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 
 import { useMeQuery } from "modules/login/infrastructure";
 import { useUserQuery } from "modules/users/infrastructure";
 
-import { UserMenu } from "./UserMenu";
-import { MainNavigation } from "./MainNavigation";
 import { FriendRequests } from "./FriendRequests";
+import { MainNavigation } from "./MainNavigation";
+import { UserMenu } from "./UserMenu";
 
 export const Navbar = () => {
   const { data: me } = useMeQuery();

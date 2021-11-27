@@ -1,4 +1,3 @@
-import React from "react";
 import { Skeleton, SkeletonCircle, HStack, Box } from "@chakra-ui/react";
 
 import { Card } from "components/Card";

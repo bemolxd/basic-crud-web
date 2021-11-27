@@ -1,9 +1,9 @@
-import React from "react";
-import { HStack, IconButton, Tooltip } from "@chakra-ui/react";
 import { MdDeleteForever, MdEdit } from "react-icons/md";
 
-import { useDeletePost } from "modules/feed/infrastructure";
+import { HStack, IconButton, Tooltip } from "@chakra-ui/react";
+
 import { Post, useEditPostModalStore } from "modules/feed/application";
+import { useDeletePost } from "modules/feed/infrastructure";
 
 interface IProps {
   post: Post;

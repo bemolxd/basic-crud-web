@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
+
 import { HStack, Spacer } from "@chakra-ui/react";
 
 import { NavigationTabs, SettingsRoutes } from "modules/settings/presentation";

@@ -1,5 +1,7 @@
-import { AxiosError } from "axios";
 import { useQuery } from "react-query";
+
+import { AxiosError } from "axios";
+
 import { api } from "utils";
 
 import { Post } from "modules/feed/application";

@@ -1,11 +1,10 @@
-import React from "react";
 import { Box, HStack, Spacer, VStack, Text, Image } from "@chakra-ui/react";
 
 import { Card } from "components/Card";
 
 import { Post } from "modules/feed/application";
-import { useUserQuery } from "modules/users/infrastructure";
 import { useMeQuery } from "modules/login/infrastructure";
+import { useUserQuery } from "modules/users/infrastructure";
 
 import { ActionButtons } from "./ActionButtons";
 import { PostInfo } from "./PostInfo";

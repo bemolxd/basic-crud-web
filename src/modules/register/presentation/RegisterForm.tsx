@@ -1,9 +1,10 @@
-import React from "react";
-import { VStack, Input, Button } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import { useRegister } from "../infrastructure";
+
+import { VStack, Input, Button } from "@chakra-ui/react";
+
 import { RegisterPayload } from "../application";
+import { useRegister } from "../infrastructure";
 
 export const RegisterForm = () => {
   const {

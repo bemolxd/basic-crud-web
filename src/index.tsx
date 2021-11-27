@@ -1,11 +1,12 @@
-import { ColorModeScript } from "@chakra-ui/react";
-import * as React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import { App } from "./App";
-import * as serviceWorker from "./serviceWorker";
-
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
+
+import { ColorModeScript } from "@chakra-ui/react";
+
+import { App } from "./App";
+import * as serviceWorker from "./serviceWorker";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,14 +18,14 @@ const queryClient = new QueryClient({
 });
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <QueryClientProvider client={queryClient}>
       <ColorModeScript />
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </QueryClientProvider>
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById("root")
 );
 

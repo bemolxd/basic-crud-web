@@ -1,4 +1,3 @@
-import React from "react";
 import {
   MenuItem,
   Box,
@@ -8,14 +7,15 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
+
 import { dayjs } from "utils";
 
-import { FriendRequest } from "modules/users/application";
-import { useUserQuery } from "modules/users/infrastructure";
 import {
   useDeleteFriendRequest,
   useAddToFriends,
 } from "modules/friends/infrastructure";
+import { FriendRequest } from "modules/users/application";
+import { useUserQuery } from "modules/users/infrastructure";
 
 interface IProps {
   request: FriendRequest;

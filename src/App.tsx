@@ -1,10 +1,10 @@
-import React, { Suspense } from "react";
-import { Route, Switch } from "react-router-dom";
-import { ChakraProvider, theme } from "@chakra-ui/react";
+import { Suspense } from "react";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { Route, Switch } from "react-router-dom";
 
-import { MainRoutes } from "containers/MainRoutes";
+import { ChakraProvider, theme } from "@chakra-ui/react";
 import { LoginPage } from "containers/LoginPage";
+import { MainRoutes } from "containers/MainRoutes";
 import { Register } from "containers/Register";
 
 import { AuthRoutes } from "components/Auth";

@@ -1,13 +1,12 @@
-import React from "react";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 
-import { useUsersQuery, useUserQuery } from "modules/users/infrastructure";
-import { SinglePost } from "modules/feed/presentation";
 import { Post } from "modules/feed/application";
+import { usePostsQuery } from "modules/feed/infrastructure";
+import { SinglePost } from "modules/feed/presentation";
+import { User } from "modules/users/application";
+import { useUsersQuery, useUserQuery } from "modules/users/infrastructure";
 
 import { UserCard } from "../ExploreUsers/UserCard";
-import { Switch, Route, useRouteMatch } from "react-router-dom";
-import { usePostsQuery } from "modules/feed/infrastructure";
-import { User } from "modules/users/application";
 
 export const UserRoutes = () => {
   const {

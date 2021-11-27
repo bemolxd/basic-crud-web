@@ -1,4 +1,5 @@
-import React from "react";
+import { useForm, FormProvider } from "react-hook-form";
+
 import {
   Button,
   ButtonGroup,
@@ -9,7 +10,6 @@ import {
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react";
-import { useForm, FormProvider } from "react-hook-form";
 
 import {
   EditPostPayload,

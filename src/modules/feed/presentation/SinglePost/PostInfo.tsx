@@ -1,4 +1,5 @@
-import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   Avatar,
   HStack,
@@ -7,7 +8,7 @@ import {
   Text,
   Tooltip,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+
 import { dayjs } from "utils";
 
 interface IProps {

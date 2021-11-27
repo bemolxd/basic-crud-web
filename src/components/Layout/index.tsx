@@ -1,5 +1,5 @@
-import React from "react";
 import { VStack } from "@chakra-ui/react";
+
 import { IChildrenProp } from "types";
 
 import { Navbar } from "./Navbar";

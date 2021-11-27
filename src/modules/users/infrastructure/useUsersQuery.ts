@@ -1,6 +1,8 @@
 import { useQuery } from "react-query";
-import { api } from "utils";
+
 import { AxiosError } from "axios";
+
+import { api } from "utils";
 
 import { User, UserQueryParams } from "modules/users/application";
 

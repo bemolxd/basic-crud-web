@@ -1,12 +1,12 @@
-import React from "react";
-import { Box } from "@chakra-ui/react";
 import { useParams } from "react-router";
 
-import { useUserQuery } from "modules/users/infrastructure";
-import { EditPostModal } from "modules/feed/presentation";
+import { Box } from "@chakra-ui/react";
 
-import { InfoSection } from "./InfoSection";
+import { EditPostModal } from "modules/feed/presentation";
+import { useUserQuery } from "modules/users/infrastructure";
+
 import { UserRoutes } from "./Content";
+import { InfoSection } from "./InfoSection";
 
 export const SingleUser = () => {
   const { userId } = useParams<{ userId: string }>();

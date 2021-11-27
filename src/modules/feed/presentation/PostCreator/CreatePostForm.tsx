@@ -1,4 +1,6 @@
-import React, { createRef, Dispatch, SetStateAction, useState } from "react";
+import { createRef, Dispatch, SetStateAction, useState } from "react";
+import { useForm } from "react-hook-form";
+
 import {
   Box,
   Button,
@@ -8,12 +10,12 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import { useForm } from "react-hook-form";
+
+import { imagesToBase64 } from "utils";
 
 import { NewPostPayload } from "modules/feed/application";
 import { useCreatePost } from "modules/feed/infrastructure";
 import { useMeQuery } from "modules/login/infrastructure";
-import { imagesToBase64 } from "utils";
 
 interface IProps {
   setOpen: Dispatch<SetStateAction<boolean>>;

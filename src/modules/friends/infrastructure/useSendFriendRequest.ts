@@ -1,4 +1,5 @@
 import { useQueryClient, useMutation } from "react-query";
+
 import { api } from "utils";
 
 import { FriendRequest } from "modules/users/application";
