@@ -5,11 +5,11 @@
   "singleQuote": false,
   "importOrder": [
     "^react",
-    "^(?!(types|utils|components|modules|[./])).+",
+    "^(?!(types|utils|containers|components|modules|[./])).+",
     "^types",
     "^utils",
-    "^components",
     "^containers",
+    "^components",
     "^modules",
     "^[./]"
   ],
