@@ -1,4 +1,6 @@
-import React from "react";
+import { HiUserAdd } from "react-icons/hi";
+import { Link } from "react-router-dom";
+
 import {
   Heading,
   HStack,
@@ -7,13 +9,11 @@ import {
   Avatar,
   Tooltip,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import { HiUserAdd } from "react-icons/hi";
 
 import { Card } from "components/Card";
 
-import { User } from "modules/users/application";
 import { useSendFriendRequest } from "modules/friends/infrastructure";
+import { User } from "modules/users/application";
 
 interface IProps {
   user: User;

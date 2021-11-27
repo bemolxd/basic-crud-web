@@ -1,7 +1,7 @@
-import React from "react";
-import { HStack, IconButton } from "@chakra-ui/react";
-import { useHistory } from "react-router";
 import { ImUsers, ImSpinner4, ImRocket } from "react-icons/im";
+import { useHistory } from "react-router";
+
+import { HStack, IconButton } from "@chakra-ui/react";
 
 import { useNotImplementedNotification } from "components/NotImplementedYet";
 

@@ -1,6 +1,8 @@
-import { useHistory } from "react-router";
 import { useMutation, useQueryClient } from "react-query";
+import { useHistory } from "react-router";
+
 import { AxiosError } from "axios";
+
 import { api } from "utils";
 
 import { LoginPayload, LoginResponse } from "modules/login/application";

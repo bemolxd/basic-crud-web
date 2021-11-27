@@ -1,10 +1,9 @@
-import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 
 import { Feed } from "containers/Feed";
-import { UsersPage } from "containers/Users";
-import { UserPage } from "containers/UserPage";
 import { Settings } from "containers/Settings";
+import { UserPage } from "containers/UserPage";
+import { UsersPage } from "containers/Users";
 
 export const MainRoutes = () => (
   <Switch>

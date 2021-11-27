@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
+
 import { Box } from "@chakra-ui/react";
 
 import { SingleUser, SingleUserSuspense } from "modules/users/presentation";

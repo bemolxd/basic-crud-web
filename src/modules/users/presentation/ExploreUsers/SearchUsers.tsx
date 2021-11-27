@@ -1,4 +1,6 @@
-import React, { createRef, useState } from "react";
+import { createRef, useState } from "react";
+import { BiSearch } from "react-icons/bi";
+
 import {
   Box,
   HStack,
@@ -10,7 +12,6 @@ import {
   IconButton,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { BiSearch } from "react-icons/bi";
 
 import { useSearchUsersConsumer } from "modules/users/application";
 

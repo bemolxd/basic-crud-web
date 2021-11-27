@@ -1,5 +1,5 @@
-import React from "react";
 import { Box, BoxProps, Fade, useColorModeValue } from "@chakra-ui/react";
+
 import { IChildrenProp } from "types";
 
 export const Card = ({ children, ...props }: IChildrenProp & BoxProps) => {

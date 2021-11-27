@@ -1,5 +1,7 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
+
 import { createContext, useContextSelector } from "use-context-selector";
+
 import { IChildrenProp } from "types";
 
 interface SearchContext {

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useFormContext } from "react-hook-form";
+
 import {
   VStack,
   HStack,
@@ -12,11 +14,10 @@ import {
   Divider,
   Spacer,
 } from "@chakra-ui/react";
-import { useFormContext } from "react-hook-form";
 
+import { EditUserPayload } from "modules/settings/application";
 import { useEditUserDetails } from "modules/settings/infrastructure";
 import { User } from "modules/users/application";
-import { EditUserPayload } from "modules/settings/application";
 
 interface IProps {
   user: User;

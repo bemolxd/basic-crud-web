@@ -1,12 +1,12 @@
-import React from "react";
-import { VStack, Divider } from "@chakra-ui/react";
 import { FormProvider, useForm } from "react-hook-form";
+
+import { VStack, Divider } from "@chakra-ui/react";
 
 import { Card } from "components/Card";
 
 import { useMeQuery } from "modules/login/infrastructure";
-import { useUserQuery } from "modules/users/infrastructure";
 import { EditUserPayload } from "modules/settings/application";
+import { useUserQuery } from "modules/users/infrastructure";
 
 import { EditUserSection } from "./EditUserSection";
 import { NotificationsSection } from "./NotificationsSection";

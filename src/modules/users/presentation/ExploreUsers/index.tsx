@@ -1,13 +1,14 @@
-import React, { memo } from "react";
+import { memo } from "react";
+
 import { Box, Text, Fade } from "@chakra-ui/react";
 
-import { useUsersQuery, useUserQuery } from "modules/users/infrastructure";
+import { useFriendRequestsQuery } from "modules/friends/infrastructure";
 import { useMeQuery } from "modules/login/infrastructure";
 import { useSearchUsersConsumer } from "modules/users/application";
+import { useUsersQuery, useUserQuery } from "modules/users/infrastructure";
 
-import { UserCard } from "./UserCard";
 import { SearchUsers } from "./SearchUsers";
-import { useFriendRequestsQuery } from "modules/friends/infrastructure";
+import { UserCard } from "./UserCard";
 
 export const ExploreUsers = memo(() => {
   const { data: users } = useUsersQuery();

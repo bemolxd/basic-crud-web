@@ -1,4 +1,5 @@
-import React from "react";
+import { MdPeople } from "react-icons/md";
+
 import {
   IconButton,
   Menu,
@@ -7,11 +8,10 @@ import {
   Text,
   HStack,
 } from "@chakra-ui/react";
-import { MdPeople } from "react-icons/md";
 
+import { useFriendRequestsQuery } from "modules/friends/infrastructure";
 import { useMeQuery } from "modules/login/infrastructure";
 import { FriendRequestItem } from "modules/users/presentation/FriendRequestItem";
-import { useFriendRequestsQuery } from "modules/friends/infrastructure";
 
 export const FriendRequests = () => {
   const { data: me } = useMeQuery();

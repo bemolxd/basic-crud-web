@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from "react-query";
 import { useHistory } from "react-router-dom";
+
 import { api } from "utils";
 
 export const useLogout = () => {

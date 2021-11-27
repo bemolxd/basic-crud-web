@@ -1,5 +1,7 @@
 import { useQuery } from "react-query";
+
 import { AxiosError } from "axios";
+
 import { api } from "utils";
 
 import { FriendRequest } from "modules/users/application";

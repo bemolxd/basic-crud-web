@@ -1,7 +1,7 @@
-import React, { Suspense, useState } from "react";
+import { Suspense, useState } from "react";
 
-import { ExploreUsers, ExploreUsersSuspense } from "modules/users/presentation";
 import { SearchUsersProvider } from "modules/users/application";
+import { ExploreUsers, ExploreUsersSuspense } from "modules/users/presentation";
 
 export const UsersPage = () => {
   const [searchUsers, setSearchUsers] = useState<string>("");

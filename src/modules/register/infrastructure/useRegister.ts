@@ -1,10 +1,12 @@
 import { useMutation } from "react-query";
+
 import { AxiosError } from "axios";
+
 import { api } from "utils";
 
-import { RegisterPayload } from "modules/register/application";
 import { LoginResponse } from "modules/login/application";
 import { useLogin } from "modules/login/infrastructure";
+import { RegisterPayload } from "modules/register/application";
 
 export const useRegister = () => {
   const [login] = useLogin();

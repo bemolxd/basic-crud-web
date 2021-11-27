@@ -1,4 +1,5 @@
 import { useMutation, useQueryClient } from "react-query";
+
 import { api } from "utils";
 
 import { EditUserPayload } from "modules/settings/application";

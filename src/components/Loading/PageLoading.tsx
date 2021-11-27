@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Spinner, Heading, VStack } from "@chakra-ui/react";
 
 export const PageLoading = () => {
