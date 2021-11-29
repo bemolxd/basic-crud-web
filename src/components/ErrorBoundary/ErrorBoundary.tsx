@@ -3,6 +3,7 @@ import {
   ErrorBoundary as Boundary,
   ErrorBoundaryPropsWithFallback,
 } from "react-error-boundary";
+import { useQueryErrorResetBoundary } from "react-query";
 
 import { IChildrenProp } from "types";
 
@@ -35,17 +36,28 @@ export const ErrorBoundary = <ErrorType extends Error>({
   onResetKeysChange,
   onReset,
   onError,
-  fallback = ErrorStrategy,
+  fallback,
   resetKeys,
   children,
 }: IErrorBoundaryProps<ErrorType>) => {
+  const { reset: reactQueryReset } = useQueryErrorResetBoundary();
   return (
     <Boundary
       onResetKeysChange={onResetKeysChange}
-      onReset={onReset}
+      onReset={onReset ?? reactQueryReset}
       onError={onError}
-      FallbackComponent={fallback as any}
       resetKeys={resetKeys}
+      FallbackComponent={fallback ? (fallback as any) : undefined}
+      fallbackRender={
+        !fallback
+          ? ({ resetErrorBoundary, error }) => (
+              <ErrorStrategy
+                resetErrorBoundary={resetErrorBoundary}
+                error={error}
+              />
+            )
+          : () => null
+      }
     >
       {children}
     </Boundary>

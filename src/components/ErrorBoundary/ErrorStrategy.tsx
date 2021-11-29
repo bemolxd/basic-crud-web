@@ -5,7 +5,9 @@ import { AxiosError } from "axios";
 
 import { Fallback } from "./ErrorBoundary";
 
-interface IProps extends Fallback<Error> {}
+interface IProps extends Fallback<Error> {
+  resetErrorBoundary(...args: unknown[]): void;
+}
 
 export const ErrorStrategy = memo(({ error }: IProps) => {
   switch ((error as AxiosError).response?.status) {
