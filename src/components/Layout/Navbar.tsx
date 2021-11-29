@@ -8,6 +8,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
+import { withErrorBoundary } from "components/ErrorBoundary";
+
 import { useMeQuery } from "modules/login/infrastructure";
 import { useUserQuery } from "modules/users/infrastructure";
 
@@ -15,7 +17,7 @@ import { FriendRequests } from "./FriendRequests";
 import { MainNavigation } from "./MainNavigation";
 import { UserMenu } from "./UserMenu";
 
-export const Navbar = () => {
+const Navbar = () => {
   const { data: me } = useMeQuery();
   const { data: user } = useUserQuery(me?.id!);
 
@@ -49,3 +51,7 @@ export const Navbar = () => {
     </HStack>
   );
 };
+
+const NavbarWithBoundary = withErrorBoundary(Navbar);
+
+export { NavbarWithBoundary as Navbar };

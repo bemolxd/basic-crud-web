@@ -15,7 +15,7 @@ export const useEditUserDetails = () => {
         const { data } = await api.put<User>(`users/${userId}`, user);
         return data;
       } catch (error) {
-        console.error(error);
+        throw error;
       }
     },
     {

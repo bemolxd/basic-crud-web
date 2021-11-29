@@ -13,7 +13,7 @@ export const useCreatePost = () => {
         const { data } = await api.post<Post>("posts", payload);
         return data;
       } catch (error) {
-        console.error(error);
+        throw error;
       }
     },
     {

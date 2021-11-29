@@ -1,17 +1,15 @@
-import { Redirect } from "react-router-dom";
-
 import { IChildrenProp } from "types";
+
+import { withErrorBoundary } from "components/ErrorBoundary";
 
 import { useMeQuery } from "modules/login/infrastructure";
 
-export const AuthRoutes = ({ children }: IChildrenProp) => {
+const AuthRoutes = ({ children }: IChildrenProp) => {
   const { data } = useMeQuery();
 
-  return data?.id ? (
-    <>{children}</>
-  ) : (
-    <>
-      <Redirect to="/login" />
-    </>
-  );
+  return !!data ? <>{children}</> : <></>;
 };
+
+const AuthRoutesWithErrorBoundary = withErrorBoundary(AuthRoutes);
+
+export { AuthRoutesWithErrorBoundary as AuthRoutes };
