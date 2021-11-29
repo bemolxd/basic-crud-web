@@ -23,8 +23,6 @@ export const ExploreUsers = memo(() => {
       (query !== "" ? user.username.includes(query) : user)
   );
 
-  console.log(myUser?.friendsIds);
-
   return (
     <Box maxW="600px" w="100%">
       <SearchUsers />

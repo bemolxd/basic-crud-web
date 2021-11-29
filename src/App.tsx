@@ -22,10 +22,10 @@ export const App = () => (
             <AuthRoutes>
               <Route component={MainRoutes} path="/" />
             </AuthRoutes>
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={LoginPage} />
           </LayoutWrapper>
         </Suspense>
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={LoginPage} />
       </ErrorBoundary>
     </Switch>
     <ReactQueryDevtools initialIsOpen={false} />

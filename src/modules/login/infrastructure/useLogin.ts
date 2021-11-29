@@ -23,7 +23,9 @@ export const useLogin = () => {
     {
       onSuccess: (response) => {
         queryClient.setQueryData(["auth/me"], response);
-        if (!!response) push("/");
+      },
+      onSettled: () => {
+        push("/feed");
       },
     }
   );
