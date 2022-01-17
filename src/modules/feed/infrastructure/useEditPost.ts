@@ -15,7 +15,7 @@ export const useEditPost = () => {
         const { data } = await api.put<Post>(`posts/${id}`, body);
         return data;
       } catch (error) {
-        console.error(error);
+        throw error;
       }
     },
     {

@@ -3,8 +3,9 @@ import { VStack } from "@chakra-ui/react";
 import { IChildrenProp } from "types";
 
 import { Navbar } from "./Navbar";
+import { NavbarComponent } from "./NavbarComponent";
 
-export const LayoutWrapper = ({ children }: IChildrenProp) => {
+const LayoutWrapper = ({ children }: IChildrenProp) => {
   return (
     <>
       <Navbar />
@@ -14,3 +15,5 @@ export const LayoutWrapper = ({ children }: IChildrenProp) => {
     </>
   );
 };
+
+export { LayoutWrapper, NavbarComponent };

@@ -1,7 +1,5 @@
 import { useQuery } from "react-query";
 
-import { AxiosError } from "axios";
-
 import { api } from "utils";
 
 import { FriendRequest } from "modules/users/application";
@@ -17,9 +15,7 @@ export const useFriendRequestsQuery = (
       });
       return data;
     } catch (error) {
-      if ((error as AxiosError).response?.status === 403) {
-        return null;
-      }
+      throw error;
     }
   });
   return data;

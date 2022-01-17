@@ -8,44 +8,40 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
+import { withErrorBoundary } from "components/ErrorBoundary";
+
 import { useMeQuery } from "modules/login/infrastructure";
 import { useUserQuery } from "modules/users/infrastructure";
 
 import { FriendRequests } from "./FriendRequests";
 import { MainNavigation } from "./MainNavigation";
+import { NavbarComponent } from "./NavbarComponent";
 import { UserMenu } from "./UserMenu";
 
-export const Navbar = () => {
+const Navbar = () => {
   const { data: me } = useMeQuery();
   const { data: user } = useUserQuery(me?.id!);
 
   return (
-    <HStack
-      bg={useColorModeValue("white", "gray.700")}
-      w="100%"
-      h="54px"
-      px={40}
-      position="fixed"
-      top="0"
-      boxShadow="lg"
-      zIndex="10"
-      justify="space-evenly"
-    >
-      <Heading size="lg" fontWeight="400" as={me ? Link : undefined} to="/">
-        CRUD
-      </Heading>
-      <Spacer />
-      <MainNavigation />
-      <Spacer />
-      {me && (
-        <HStack spacing={2}>
-          <Text as={Link} to={`/user/${me?.id}`}>
-            {user?.username}
-          </Text>
-          <FriendRequests />
-          <UserMenu />
-        </HStack>
-      )}
-    </HStack>
+    <NavbarComponent
+      isAuth={!!me}
+      userMenu={
+        <>
+          {me && (
+            <HStack spacing={2}>
+              <Text as={Link} to={`/user/${me?.id}`}>
+                {user?.username}
+              </Text>
+              <FriendRequests />
+              <UserMenu />
+            </HStack>
+          )}
+        </>
+      }
+    />
   );
 };
+
+const NavbarWithBoundary = withErrorBoundary(Navbar);
+
+export { NavbarWithBoundary as Navbar };

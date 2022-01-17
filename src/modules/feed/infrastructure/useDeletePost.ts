@@ -13,7 +13,7 @@ export const useDeletePost = () => {
         const { data } = await api.delete(`posts/${postId}`);
         return data;
       } catch (error) {
-        console.error(error);
+        throw error;
       }
     },
     {
